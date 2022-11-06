@@ -38,15 +38,15 @@ export class StorageService {
   }
 
   private buildDemoData() {
-    if (this.getListData<string>('UsersTable') === null) {
+    if (this.getListData<string>('UsersTable').length === 0) {
       const users = ['Test1', 'Test2', 'Test3'];
       this.saveListData('UsersTable', users);
       const tasks = [
-        { name: 'asd', description: 'leírás', isDone: true, createdBy: 'Test1', doneBy: 'Test1' },
-        { name: 'asd2', description: 'leírás2', isDone: true, createdBy: 'Test1', doneBy: 'Test2' },
-        { name: 'asd3', description: 'leírás3', isDone: true, createdBy: 'Test2', doneBy: 'Test2' },
-        { name: 'asd4', description: 'leírás4', isDone: false, createdBy: 'Test3', doneBy: null },
-        { name: 'asd5', description: 'leírás5', isDone: false, createdBy: 'Test1', doneBy: null }
+        { name: 'Task 1', description: 'Finish the homework.', isDone: true, createdBy: 'Test1', doneBy: 'Test1' },
+        { name: 'Task 2', description: 'Finish the housework.', isDone: true, createdBy: 'Test1', doneBy: 'Test2' },
+        { name: 'Task 3', description: 'Feed the dog.', isDone: true, createdBy: 'Test2', doneBy: 'Test2' },
+        { name: 'Task 4', description: 'Wash the plates.', isDone: false, createdBy: 'Test3', doneBy: null },
+        { name: 'Task 5', description: 'Learn about Angular', isDone: false, createdBy: 'Test1', doneBy: null }
       ];
       this.saveListData('TasksTable', tasks);
     }

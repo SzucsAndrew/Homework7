@@ -11,18 +11,18 @@ export class TaskPipe implements PipeTransform {
 
   transform(task: Task): string {
     const currentUser = this.authService.getUserName();
-    const createdBy = task.createdBy === currentUser ? 'You' : task.createdBy;
+    const createdBy = task.createdBy === currentUser ? 'Me' : task.createdBy;
 
     if (!task.isDone) {
       return `${task.name} - ${task.description} (Created: ${createdBy})`;
     }
 
-    if (task.createdBy !== task.doneBy) {
-      const doneBy = task.doneBy === currentUser ? 'You' : task.doneBy;
-      return `${task.name} - ${task.description} (Created: ${createdBy} - Done by: ${doneBy})`;
+    if (task.createdBy === task.doneBy) {
+      return `${task.name} - ${task.description} (Created and Done by: ${createdBy})`;
     }
     else {
-      return `${task.name} - ${task.description} (Created and Done by: ${createdBy})`;
+      const doneBy = task.doneBy === currentUser ? 'Me' : task.doneBy;
+      return `${task.name} - ${task.description} (Created: ${createdBy} - Done by: ${doneBy})`;
     }
   }
 }
