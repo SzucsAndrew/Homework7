@@ -1,0 +1,23 @@
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    @include flexcenter();
+    background-color: rgb(68, 103, 113);
+    height: 100vh;
+}
+
+input {
+    width: 120px;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}

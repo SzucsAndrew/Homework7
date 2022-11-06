@@ -1,0 +1,19 @@
+<div class="nav">
+    <button routerLink="new">New task</button>
+    <button (click)="logOut()" routerLink="/login">Log out</button>
+</div>
+<div>
+    <h3>Tasks</h3>
+    <div *ngIf="notCompletedTasks.length === 0">There is no task :/</div>
+    <div *ngIf="notCompletedTasks.length > 0">
+        <app-task-element *ngFor="let task of notCompletedTasks" [task]="task" (taskChange)="doneTaks($event)">
+        </app-task-element>
+    </div>
+</div>
+<div>
+    <h3>Completed tasks</h3>
+    <div *ngIf="completedTasks.length === 0">There is no task :/</div>
+    <div *ngIf="completedTasks.length > 0">
+        <app-task-element *ngFor="let task of completedTasks" [task]="task"></app-task-element>
+    </div>
+</div>

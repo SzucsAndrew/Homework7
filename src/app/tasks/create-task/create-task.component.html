@@ -1,0 +1,8 @@
+<div>
+    <div ngClass="card">
+        <input placeholder="Name" type="text" [(ngModel)]="taskName">
+        <input placeholder="Description" type="text" [(ngModel)]="taskDescription">
+    </div>
+    <button (click)="createTask()" routerLink="/tasks/">Create</button>
+    <button ngClass="second" routerLink="/tasks/">Back</button>
+</div>

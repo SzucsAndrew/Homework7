@@ -1,0 +1,4 @@
+<div ngClass="card">
+    <label>{{this.task | task}}</label>
+    <button *ngIf="!task.isDone" (click)="doneTask()">Done</button>
+</div>

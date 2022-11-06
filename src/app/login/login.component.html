@@ -1,0 +1,6 @@
+<div ngClass="card">
+    <label ngClass="title">Login</label>
+    <input type="text" [(ngModel)]="userName">
+    <button (click)="login()">Login</button>
+    <p *ngIf="invalidUser" ngClass="error">Invalid User!</p>
+</div>
