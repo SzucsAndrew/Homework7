@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { TasksComponent } from './tasks.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { TaskElementComponent } from './task-element/task-element.component';
-import { TaskPipe } from './pipes/task.pipe';
+import { TaskDetailsPipe } from './pipes/task.details.pipe';
 import { TasksRoutingModule } from './tasks-routing.module';
 
 @NgModule({
@@ -12,13 +12,13 @@ import { TasksRoutingModule } from './tasks-routing.module';
     TasksComponent,
     CreateTaskComponent,
     TaskElementComponent,
-    TaskPipe
+    TaskDetailsPipe
   ],
   exports: [
     TasksComponent,
     CreateTaskComponent,
     TaskElementComponent,
-    TaskPipe
+    TaskDetailsPipe
   ],
   imports: [
     CommonModule,

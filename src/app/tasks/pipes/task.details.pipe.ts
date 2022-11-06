@@ -3,9 +3,9 @@ import { AuthService } from '../../services/auth.service';
 import { Task } from '../interfaces/task';
 
 @Pipe({
-  name: 'task'
+  name: 'taskDetails'
 })
-export class TaskPipe implements PipeTransform {
+export class TaskDetailsPipe implements PipeTransform {
 
   constructor(private authService: AuthService) { }
 
